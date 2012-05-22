@@ -4,20 +4,17 @@
 //@email: yensamg@gmail.com
 //@license: Feel free to use it, but keep this credits please!					
 /***************************/
-
 //OS elements
 var main = $("#main");
 var taskbar = $("#taskbar");
 var clock = $("#clock");
 var trash = $("#trash");
 var icons = $(".icon");
-
 //Mouse status
 var mouseDiffY = 0;
 var mouseDiffX = 0;
 var mouseActiveIcon = 0;
 var mouseActiveCloneIcon = 0;
-
 //update clock function
 function updateClock(){
 	var now = new Date();
@@ -43,10 +40,8 @@ $(document).ready(function(){
 	trash.css({'top':(main.height()) - (128 + taskbar.height()), 'left':main.width() - 128});
 	icons.fadeIn(1500);
 	taskbar.slideDown();
-	
 	//show current time
 	updateClock();
-	
 	//mouse click
 	icons.mousedown(function(e){
 		//only accepts left click; all navs uses 0 but IE uses 1 lol...
@@ -61,7 +56,6 @@ $(document).ready(function(){
 			mouseActiveCloneIcon = mouseActiveIcon.clone(false).insertBefore(mouseActiveIcon);
 		}
 	});
-	
 	//moving mouse
 	$(document).mousemove(function(e){
 		if(mouseActiveIcon){
@@ -71,7 +65,6 @@ $(document).ready(function(){
 			var restaX = e.pageX - $(this).css("left");
 		}
 	});
-	
 	//release mouse click
 	$(document).mouseup(function(){
 		if(mouseActiveIcon != 0){
@@ -81,12 +74,10 @@ $(document).ready(function(){
 			mouseActiveCloneIcon = 0;
 		}
 	});
-	
 	//mouse double click
 	icons.dblclick(function(){
 		alert(this.id);
 	});
-	
 	//custom context menu on right click
 	main.mousedown(function(e){
 		if(e.button == 2){

@@ -30,8 +30,7 @@ html,body{
 	visibility: hidden;
 	display: block;
 }
-a{
-	text-decoration: none;
+a{	text-decoration: none;
 }
 /******* GENERAL RESET *******/
 /******* MAIN *******/
@@ -84,7 +83,6 @@ a{
 	background: transparent url(images/trash.png) no-repeat scroll center 4px;
 }
 /******* /ICONS  *******/
-
 /******* TASKBAR  *******/
 #main #taskbar{
 	width: 100%;
